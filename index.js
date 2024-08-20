@@ -59,7 +59,37 @@ const menu = async () => {
                 console.log(error);
             }
             break;
-            
+
+        case 'Add A Role':
+            const rollAdd = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'title',
+                    message: 'What is the title of the role?',
+                },
+                {
+                    type: 'input',
+                    name: 'salary',
+                    message: 'What is the salary of the role?',
+                },
+                {
+                    type: 'input',
+                    name: 'department_id',
+                    message: 'What is the department id of the role?',
+                },
+            ]);
+            try {
+                const role = await newRole(rollAdd.title, rollAdd.salary, rollAdd.department_id);
+                if (role) {
+                    console.log('Role ' + rollAdd.title + ' added successfully');
+                } else {
+                    console.log('Role already exists');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+            break;
+
     }
     }
 }
