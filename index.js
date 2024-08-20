@@ -19,6 +19,15 @@ const menu = async () => {
                 'Update An Employee Role',
                 'Exit'
             ]
-        })
+        });
+
+    switch (option) {
+        case 'View All Departments':
+            const departments = await getDepartments();
+            console.log("You have selected View All Departments");
+            console.table(departments);
+            break;
+
+    }
     }
 }
