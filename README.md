@@ -13,7 +13,7 @@
   - [Questions](#questions)
 
   ## Installation
-  npm init -y, npm install inquirer
+  npm init -y, npm install inquirer, npm install dotenv
 
   ## Usage
   node index.js
