@@ -125,6 +125,31 @@ const menu = async () => {
             }
             break;
 
+        case 'Update An Employee Role':
+            const employeeUpdate = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'employee_id',
+                    message: 'What is the id of the employee?',
+                },
+                {
+                    type: 'input',
+                    name: 'role_id',
+                    message: 'What is the role id of the employee?',
+                },
+            ]);
+            try {
+                const employee = await updateEmployeeRole(employeeUpdate.employee_id, employeeUpdate.role_id);
+                if (employee) {
+                    console.log('Employee ' + employeeUpdate.employee_id + ' updated successfully');
+                } else {
+                    console.log('Employee already has that role');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+            break;
+
     }
     }
 }
