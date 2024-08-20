@@ -28,6 +28,19 @@ const menu = async () => {
             console.table(departments);
             break;
 
+        case 'View All Roles':
+            const roles = await getRoles();
+            console.log("You have selected View All Roles");
+            console.table(roles);
+            break;
+
+        case 'View All Employees':
+            const employees = await getEmployees();
+            console.log("You have selected View All Employees");
+            console.table(employees);
+            break;
+
+
     }
     }
 }
