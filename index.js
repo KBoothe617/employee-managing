@@ -40,7 +40,26 @@ const menu = async () => {
             console.table(employees);
             break;
 
-
+        case 'Add A Department':
+            const departmentAdd = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'name',
+                    message: 'What is the name of the department?',
+                },
+            ]);
+            try {
+                const department = await newDepartment(departmentAdd.name);
+                if (department) {
+                    console.log('Department ' + departmentAdd.name + ' added successfully');
+                } else {
+                    console.log('Department already exists');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+            break;
+            
     }
     }
 }
