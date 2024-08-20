@@ -150,6 +150,12 @@ const menu = async () => {
             }
             break;
 
+        case 'Exit':
+            exit = true;
+            console.log('Goodbye!');
+            break;
     }
+    await menu();
     }
-}
+};
+menu();
