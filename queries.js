@@ -33,3 +33,7 @@ export const departmentAdd = async (name) => {
     }
 }
 
+export const roleAdd = async (title, salary, department_id) => {
+    const result = await pool.query('INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3) RETURNING *', [title, salary, department_id]);
+    return result.rows[0];
+}
