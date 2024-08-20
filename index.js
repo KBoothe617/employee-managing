@@ -90,6 +90,41 @@ const menu = async () => {
             }
             break;
 
+        case 'Add An Employee':
+            const employeeAdd = await inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'first_name',
+                    message: 'What is the first name of the employee?',
+                },
+                {
+                    type: 'input',
+                    name: 'last_name',
+                    message: 'What is the last name of the employee?',
+                },
+                {
+                    type: 'input',
+                    name: 'role_id',
+                    message: 'What is the role id of the employee?',
+                },
+                {
+                    type: 'input',
+                    name: 'manager_id',
+                    message: 'What is the manager id of the employee?',
+                },
+            ]);
+            try {
+                const employee = await newEmployee(employeeAdd.first_name, employeeAdd.last_name, employeeAdd.role_id, employeeAdd.manager_id);
+                if (employee) {
+                    console.log('Employee ' + employeeAdd.first_name + ' ' + employeeAdd.last_name + ' added successfully');
+                } else {
+                    console.log('Employee already exists');
+                }
+            } catch (error) {
+                console.log(error);
+            }
+            break;
+
     }
     }
 }
