@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
-import { getDepartments, getRoles, getEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } from './queries.js';
+import { getDepartments, getRoles, getEmployees, newDepartment, newRole, newEmployee, updateEmployeeRole } from './src/db/queries.js';
+
 
 const menu = async () => {
     let exit = false;
