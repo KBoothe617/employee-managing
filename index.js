@@ -155,7 +155,7 @@ const menu = async () => {
         case 'Exit':
             exit = true;
             console.log('Goodbye!');
-            break;
+            process.exit(0);
     }
     await menu();
     }
