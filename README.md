@@ -21,7 +21,8 @@
   This project is licensed under the MIT license.
 
   ## Contributing
-  
+  Link to demo video
+  https://drive.google.com/file/d/1pKrZqBhUAa8gebZs4zur5j7ZLtwlqGoI/view?usp=sharing
 
   ## Tests
   npm test
