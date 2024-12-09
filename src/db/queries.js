@@ -6,7 +6,7 @@ export const getDepartments = async () => {
 }
 
 export const getRoles = async () => {
-    const result = await pool.query('SELECT * role.id, role.title, role.salary, department.id FROM role JOIN department ON role.department_id = department.id');
+    const result = await pool.query('SELECT role.id, role.title, role.salary, department.id FROM role JOIN department ON role.department_id = department.id');
     return result.rows;
 }
 
